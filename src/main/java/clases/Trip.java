@@ -1,5 +1,6 @@
 package clases;
 
+import java.sql.Date;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -10,9 +11,9 @@ import java.util.HashSet;
 public class Trip {
 
 	private Long trip_id;
-	private Integer trip_cost;
-	private Integer trip_numberOfpassengers;
-	private String trip_date;
+	private int trip_cost;
+	private int trip_numberOfpassengers;
+	private Date trip_date;
 	private String trip_from;
 	private String trip_to;
 	private Collection<Passenger> trip_passengers;
@@ -32,7 +33,7 @@ public class Trip {
 	 * @param trip_from
 	 * @param trip_to
 	 */
-	public Trip(Integer trip_cost, Integer trip_numberOfpassengers, String trip_date, String trip_from,
+	public Trip(int trip_cost, int trip_numberOfpassengers, Date trip_date, String trip_from,
 			String trip_to) {
 		super();
 		this.trip_cost = trip_cost;
@@ -64,7 +65,7 @@ public class Trip {
 	/**
 	 * @return the trip_cost
 	 */
-	public Integer getTrip_cost() {
+	public int getTrip_cost() {
 		return trip_cost;
 	}
 
@@ -72,7 +73,7 @@ public class Trip {
 	/**
 	 * @param trip_cost the trip_cost to set
 	 */
-	public void setTrip_cost(Integer trip_cost) {
+	public void setTrip_cost(int trip_cost) {
 		this.trip_cost = trip_cost;
 	}
 
@@ -80,7 +81,7 @@ public class Trip {
 	/**
 	 * @return the trip_numberOfpassengers
 	 */
-	public Integer getTrip_numberOfpassengers() {
+	public int getTrip_numberOfpassengers() {
 		return trip_numberOfpassengers;
 	}
 
@@ -88,7 +89,7 @@ public class Trip {
 	/**
 	 * @param trip_numberOfpassengers the trip_numberOfpassengers to set
 	 */
-	public void setTrip_numberOfpassengers(Integer trip_numberOfpassengers) {
+	public void setTrip_numberOfpassengers(int trip_numberOfpassengers) {
 		this.trip_numberOfpassengers = trip_numberOfpassengers;
 	}
 
@@ -96,7 +97,7 @@ public class Trip {
 	/**
 	 * @return the trip_date
 	 */
-	public String getTrip_date() {
+	public Date getTrip_date() {
 		return trip_date;
 	}
 
@@ -104,7 +105,7 @@ public class Trip {
 	/**
 	 * @param trip_date the trip_date to set
 	 */
-	public void setTrip_date(String trip_date) {
+	public void setTrip_date(Date trip_date) {
 		this.trip_date = trip_date;
 	}
 
