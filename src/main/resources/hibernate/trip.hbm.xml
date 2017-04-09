@@ -6,13 +6,13 @@
 <hibernate-mapping package="clases">
 	<class name="Trip" table="TRIP">
 		<id name="trip_id" column="TRIP_ID" type="long">
-			<generator class="native"/>
+			<generator class="native" />
 		</id>
-		<property name="trip_cost" type="int"/>
-		<property name="trip_numberOfpassengers" type="int"/>
-		<property name="trip_date" type="date"/>
-		<property name="trip_from" type="string"/>
-		<property name="trip_to" type="string"/>
-		<property name="trip_passengers"/>
+		<property name="trip_cost" type="int" />
+		<property name="trip_numberOfpassengers" type="int" />
+		<property name="trip_date" type="date" />
+		<property name="trip_from" type="string" />
+		<property name="trip_to" type="string" />
+		<property name="trip_passengers" />
 	</class>
 </hibernate-mapping>

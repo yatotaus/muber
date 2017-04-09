@@ -14,7 +14,12 @@ import java.util.HashSet;
 public class Driver extends User{
 	
 	private String driver_licence;
-	private Collection<Trip> driver_trips;
+	
+	/**
+	 * ver esta variable, el viaje deberia conocer el conductor o no, o ambos ¿? 
+	 * 
+	 */
+	private Collection<Trip> driver_trips; 
 	private Collection<Score> driver_scores;
 	
 	
