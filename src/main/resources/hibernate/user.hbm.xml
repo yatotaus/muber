@@ -6,10 +6,10 @@
 <hibernate-mapping package="clases">
 	<class name="User" table="USER">
 		<id name="user_id" column="USER_ID" type="long">
-			<generator class="native"/>
+			<generator class="native" />
 		</id>
-		<property name="user_name" not-null="true" type="string"/>
-		<property name="user_password" type="string"/>
-		<property name="user_date" type="date"/>
+		<property name="user_name" not-null="true" type="string" />
+		<property name="user_password" type="string" />
+		<property name="user_date" type="date" />
 	</class>
 </hibernate-mapping>
