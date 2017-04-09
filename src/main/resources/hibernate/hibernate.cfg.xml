@@ -16,7 +16,15 @@
 		<property name="hibernate.format_sql">true</property>
 
 		<mapping resource="clases/user.hbm.xml"/>
+		<mapping resource="clases/trip.hbm.xml"/>
+		<mapping resource="clases/driver.hbm.xml"/>
 		
+		<mapping resource="clases/passenger.hbm.xml"/>
+		<mapping resource="clases/muber.hbm.xml"/>
+		
+		<!-- 
+		<mapping resource="clases/score.hbm.xml"/>
+		-->
 		
 
 	</session-factory>

@@ -13,6 +13,6 @@
 		<property name="trip_date" type="date" />
 		<property name="trip_from" type="string" />
 		<property name="trip_to" type="string" />
-		<property name="trip_passengers" />
+		<!--  <property name="trip_passengers" /> -->
 	</class>
 </hibernate-mapping>

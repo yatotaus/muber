@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import clases.Passenger;
+import clases.Trip;
 
 public class Prueba {
 	
@@ -31,10 +32,11 @@ public class Prueba {
 		u.setUser_date(new Date(10, 3, 2017));
 		u.setUser_name("German");
 		u.setUser_password("contraseña");
-		
+		Trip t = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Tres Arroyos");
+
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
-		s.save(u);
+		s.save(t);
 		s.getTransaction().commit();
 
 	}
