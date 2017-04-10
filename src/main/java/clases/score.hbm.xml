@@ -3,7 +3,7 @@
  "-//Hibernate/Hibernate Mapping DTD//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
+<hibernate-mapping package="clases">
 	<class name="Score" table="SCORE">
 		<id name="score_id" column="SCORE_ID" type="long">
 			<generator class="native" />

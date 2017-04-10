@@ -2,11 +2,9 @@ package test;
 
 import java.io.File;
 import java.sql.Date;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 import clases.Passenger;
 import clases.Trip;
 
@@ -27,6 +25,7 @@ public class Prueba {
 
 
 	public static void main(String[] args) {
+		
 		Passenger u = new Passenger();
 		u.setCredits(1500);
 		u.setUser_date(new Date(10, 3, 2017));
