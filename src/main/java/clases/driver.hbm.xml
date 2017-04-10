@@ -4,5 +4,20 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="clases">
+	<class name="Driver" table="USER">
+		<id name="user_id" column="USER_ID" type="long">
+			<generator class="native" />
+		</id>
+		<property name="user_name" not-null="true" type="string" />
+		<property name="user_password" type="string" />
+		<property name="user_date" type="date" />
+		<property name="driver_licence" type="string"/>
+		
+		<bag name="driver_trips" inverse="false">
+			<key column="user_id"></key>
+			<one-to-many class="Trip" />
+		</bag>
+		
+	</class>
 
 </hibernate-mapping>

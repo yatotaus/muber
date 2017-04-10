@@ -3,6 +3,7 @@ package clases;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedList;
 
 /**
  * @author yato
@@ -17,6 +18,7 @@ public class Trip {
 	private String trip_from;
 	private String trip_to;
 	private Collection<Passenger> trip_passengers;
+	private Driver trip_driver;
 	
 	/**
 	 * 
@@ -41,6 +43,7 @@ public class Trip {
 		this.trip_date = trip_date;
 		this.trip_from = trip_from;
 		this.trip_to = trip_to;
+		this.trip_passengers = new LinkedList<Passenger>();
 	}
 
 	
@@ -155,6 +158,22 @@ public class Trip {
 	 */
 	public void setTrip_passengers(Collection<Passenger> trip_passengers) {
 		this.trip_passengers = trip_passengers;
+	}
+
+
+	/**
+	 * @return the trip_driver
+	 */
+	public Driver getTrip_driver() {
+		return trip_driver;
+	}
+
+
+	/**
+	 * @param trip_driver the trip_driver to set
+	 */
+	public void setTrip_driver(Driver trip_driver) {
+		this.trip_driver = trip_driver;
 	}
 	
 	
