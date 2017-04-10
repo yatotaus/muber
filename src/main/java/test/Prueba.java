@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import clases.Driver;
 import clases.Passenger;
 import clases.Trip;
 
@@ -27,16 +28,19 @@ public class Prueba {
 
 
 	public static void main(String[] args) {
-		Passenger u = new Passenger();
-		u.setCredits(1500);
+		//Persiste viajes, pasajeros
+		Driver u = new Driver();
+		u.setDriver_licence("Licencia#");
 		u.setUser_date(new Date(10, 3, 2017));
 		u.setUser_name("German");
 		u.setUser_password("contraseña");
+		
 		Trip t = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Tres Arroyos");
 
+		
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
-		s.save(t);
+		s.save(u);
 		s.getTransaction().commit();
 
 	}

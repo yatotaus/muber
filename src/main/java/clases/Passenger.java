@@ -12,6 +12,16 @@ import java.util.HashSet;
  */
 public class Passenger extends User {
 	
+	public Integer getPassenger_credits() {
+		return passenger_credits;
+	}
+
+
+	public void setPassenger_credits(Integer passenger_credits) {
+		this.passenger_credits = passenger_credits;
+	}
+
+
 	private Integer passenger_credits;
 	private Collection<Score> passenger_scores;
 	
