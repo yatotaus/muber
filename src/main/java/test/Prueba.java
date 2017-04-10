@@ -2,6 +2,7 @@ package test;
 
 import java.io.File;
 import java.sql.Date;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +12,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import clases.*;
+
 
 public class Prueba {
 	
@@ -29,6 +31,7 @@ public class Prueba {
 
 
 	public static void main(String[] args) {
+		//Persiste score
 		//Persiste viajes, pasajeros
 		Driver driver = new Driver();
 		driver.setDriver_licence("Licencia#");
@@ -51,10 +54,10 @@ public class Prueba {
 		
 		
 		Trip t = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Tres Arroyos");
+		
 		Score score = new Score();
 		score.setScore_comment("Muy buen conductor");
-		score.setScore_number(4);
-		
+		score.setScore_number(4);	
 		
 		Set<Trip> trips = new HashSet<Trip>();
 		Set<User> users = new HashSet<User>();
@@ -67,11 +70,16 @@ public class Prueba {
 		Muber muber = new Muber(users, trips);
 
 		
+
+		score.setTrip(t);
+				
+
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
 		s.save(muber);
 		s.getTransaction().commit();
-
+		
 	}
 
+	
 }
