@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 public class Muber {
 
+	private Long muber_id;
 	private Collection<User> muber_users;
 	private  Collection<Trip> muber_trips;
 	
@@ -23,6 +24,15 @@ public class Muber {
 		super();
 		this.setMuber_users(muber_users);
 		this.setMuber_trips(muber_trips);
+	}
+
+	public Long getMuber_id() {
+		return muber_id;
+	}
+
+
+	public void setMuber_id(Long muber_id) {
+		this.muber_id = muber_id;
 	}
 
 

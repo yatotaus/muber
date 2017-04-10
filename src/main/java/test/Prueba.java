@@ -2,15 +2,15 @@ package test;
 
 import java.io.File;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import clases.Driver;
-import clases.Passenger;
-import clases.Score;
-import clases.Trip;
+import clases.*;
 
 public class Prueba {
 	
@@ -30,22 +30,46 @@ public class Prueba {
 
 	public static void main(String[] args) {
 		//Persiste viajes, pasajeros
-		Driver u = new Driver();
-		u.setDriver_licence("Licencia#");
-		u.setUser_date(new Date(10, 3, 2017));
-		u.setUser_name("German");
-		u.setUser_password("contraseña");
+		Driver driver = new Driver();
+		driver.setDriver_licence("Licencia#");
+		driver.setUser_date(new Date(10, 3, 2017));
+		driver.setUser_name("Roberto");
+		driver.setUser_password("contraseña");
+		
+		//Germán, alicia, margarita
+		Passenger german = new Passenger();
+		Passenger alicia = new Passenger();
+		Passenger margarita = new Passenger();
+		
+		german.setUser_name("Germán");
+		alicia.setUser_name("Alicia");
+		margarita.setUser_name("Margarita");
+		
+		alicia.setPassenger_credits(1500);
+		german.setPassenger_credits(1500);
+		margarita.setPassenger_credits(1500);
+		
 		
 		Trip t = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Tres Arroyos");
 		Score score = new Score();
 		score.setScore_comment("Muy buen conductor");
 		score.setScore_number(4);
-
+		
+		
+		Set<Trip> trips = new HashSet<Trip>();
+		Set<User> users = new HashSet<User>();
+		
+		trips.add(t);
+		users.add(german);
+		users.add(margarita);
+		users.add(alicia);
+		
+		Muber muber = new Muber(users, trips);
 
 		
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
-		s.save(score);
+		s.save(muber);
 		s.getTransaction().commit();
 
 	}
