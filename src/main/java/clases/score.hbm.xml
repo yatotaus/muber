@@ -3,12 +3,14 @@
  "-//Hibernate/Hibernate Mapping DTD//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
+<hibernate-mapping package="clases">
 	<class name="Score" table="SCORE">
-		<id name="score_id" column="SCORE_ID" type="long">
+		<id name="score_id" column="USER_ID" type="long">
 			<generator class="native" />
 		</id>
 		<property name="score_comment" type="string" />
 		<property name="score_number" type="int" />
+		
 	</class>
+
 </hibernate-mapping>
