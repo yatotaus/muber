@@ -38,6 +38,13 @@ public class Prueba {
 		driver.setUser_name("Roberto");
 		driver.setUser_password("contraseña");
 		
+		Driver driver2 = new Driver();
+		driver2.setDriver_licence("Licencia#");
+		driver2.setUser_date(new Date(10, 3, 2017));
+		driver2.setUser_name("Roberto Carlos");
+		driver2.setUser_password("contraseña");
+
+		
 		//Germán, alicia, margarita
 		Passenger german = new Passenger();
 		Passenger alicia = new Passenger();
@@ -70,6 +77,8 @@ public class Prueba {
 		users.add(german);
 		users.add(margarita);
 		users.add(alicia);
+		//users.add(driver);
+		//users.add(driver2);
 		
 		Muber muber = new Muber(users, trips);				
 
