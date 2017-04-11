@@ -19,6 +19,7 @@ public class Driver extends User{
 	 * ver esta variable, el viaje deberia conocer el conductor o no, o ambos ¿? 
 	 * 
 	 */
+	private Long user_id;
 	private Collection<Trip> driver_trips; 
 	private Collection<Score> driver_scores;
 	
@@ -36,7 +37,16 @@ public class Driver extends User{
 		this.setDriver_licence(licence);
 	}
 
-	
+	public Long getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
+	}
+
+
+
 	/**
 	 * @return the driver_licence
 	 */

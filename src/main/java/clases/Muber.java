@@ -26,15 +26,6 @@ public class Muber {
 		this.setMuber_trips(muber_trips);
 	}
 
-	public Long getMuber_id() {
-		return muber_id;
-	}
-
-
-	public void setMuber_id(Long muber_id) {
-		this.muber_id = muber_id;
-	}
-
 
 	/**
 	 * @return the muber_users
@@ -47,8 +38,20 @@ public class Muber {
 	/**
 	 * @param muber_users the muber_users to set
 	 */
+	
+	
 	public void setMuber_users(Collection<User> muber_users) {
 		this.muber_users = muber_users;
+	}
+
+
+	public Long getMuber_id() {
+		return muber_id;
+	}
+
+
+	public void setMuber_id(Long muber_id) {
+		this.muber_id = muber_id;
 	}
 
 

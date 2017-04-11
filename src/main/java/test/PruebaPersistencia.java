@@ -1,11 +1,17 @@
 package test;
 
 import junit.framework.TestCase;
+
 import java.io.File;
 import java.sql.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
+
 import clases.Passenger;
 import clases.Trip;
 
@@ -14,7 +20,6 @@ import clases.Trip;
  * @author marcos
  *
  */
-
 public class PruebaPersistencia extends TestCase {
 
 		private static SessionFactory sessionFactory = buildSessionFactory();
@@ -29,8 +34,6 @@ public class PruebaPersistencia extends TestCase {
 				throw new ExceptionInInitializerError(ex);
 			}
 		}
-		
-		
 		public void testPrimerTest(){
 			
 			Passenger u = new Passenger();
@@ -46,6 +49,4 @@ public class PruebaPersistencia extends TestCase {
 			s.getTransaction().commit();
 			
 		}
-		
-		
 }

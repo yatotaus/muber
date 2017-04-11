@@ -13,11 +13,6 @@
 		<property name="user_date" type="date" />
 		<property name="driver_licence" type="string"/>
 		
-		<bag name="driver_trips" inverse="false">
-			<key column="user_id"></key>
-			<one-to-many class="Trip" />
-		</bag>
-		
 	</class>
 
 </hibernate-mapping>

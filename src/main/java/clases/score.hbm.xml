@@ -10,10 +10,7 @@
 		</id>
 		<property name="score_comment" type="string" />
 		<property name="score_number" type="int" />
-
-	<!-- 		
-		<many-to-one name="score_trip" column="trip_id"></many-to-one>
-	 -->	
+		
 	</class>
 
 </hibernate-mapping>

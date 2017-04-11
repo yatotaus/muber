@@ -8,14 +8,19 @@
 		<id name="muber_id" column="MUBER_ID" type="long">
 			<generator class="native" />
 		</id>
-		<set name="muber_users" cascade="all">
-			<key column="user_id" not-null="true"/>
-			<one-to-many class="User"/>
-		</set>
+		
 		<set name="muber_trips" cascade="all">
 			<key column="trip_id" not-null="true"/>
 			<one-to-many class="Trip"/>
 		</set>
+		
+		<!-- 
+		<set name="muber_users" cascade="all">
+			<key column="user_id" not-null="true"/>
+			<one-to-many class="Passenger"/>
+		</set>
+		
+		 -->
 		
 		
 	</class>

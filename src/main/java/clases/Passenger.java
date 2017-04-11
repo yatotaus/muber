@@ -12,6 +12,11 @@ import java.util.HashSet;
  */
 public class Passenger extends User {
 	
+	private Long user_id;
+	private Integer passenger_credits = 0;
+	private Collection<Score> passenger_scores;
+
+	
 	public Integer getPassenger_credits() {
 		return passenger_credits;
 	}
@@ -19,18 +24,23 @@ public class Passenger extends User {
 
 	public void setPassenger_credits(Integer passenger_credits) {
 		this.passenger_credits = passenger_credits;
-	}
-
-
-	private Integer passenger_credits;
-	private Collection<Score> passenger_scores;
-	
+	}	
 	
 	public Passenger(){
 		this.setPassenger_scores(new HashSet<Score>());
 	}
 	
 	
+	public Long getUser_id() {
+		return user_id;
+	}
+
+
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
+	}
+
+
 	/**
 	 * 
 	 */
