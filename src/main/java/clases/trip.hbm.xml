@@ -14,5 +14,10 @@
 		<property name="trip_from" type="string" />
 		<property name="trip_to" type="string" />
 		<!--  <property name="trip_passengers" /> -->
+		<set name="trip_passengers" cascade="all">
+			<key column="passenger_id" not-null="false"/>
+			<one-to-many class="Passenger"/>
+		</set>
+		
 	</class>
 </hibernate-mapping>

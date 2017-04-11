@@ -3,6 +3,7 @@ package clases;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author yato
@@ -16,7 +17,7 @@ public class Trip {
 	private Date trip_date;
 	private String trip_from;
 	private String trip_to;
-	private Collection<Passenger> trip_passengers;
+	private Set<Passenger> trip_passengers = new HashSet<Passenger>();
 	
 	/**
 	 * 
@@ -77,6 +78,10 @@ public class Trip {
 		this.trip_cost = trip_cost;
 	}
 
+	public void addPassenger(Passenger passenger){
+		
+		this.trip_passengers.add(passenger);
+	}
 
 	/**
 	 * @return the trip_numberOfpassengers
@@ -153,7 +158,7 @@ public class Trip {
 	/**
 	 * @param trip_passengers the trip_passengers to set
 	 */
-	public void setTrip_passengers(Collection<Passenger> trip_passengers) {
+	public void setTrip_passengers(Set<Passenger> trip_passengers) {
 		this.trip_passengers = trip_passengers;
 	}
 	
