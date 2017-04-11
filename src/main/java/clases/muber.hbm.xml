@@ -10,9 +10,14 @@
 		</id>
 		
 		
-		<set name="muber_users" cascade="all">
+		<set name="muber_passengers" cascade="all">
 			<key column="muber_id" not-null="false"/>
 			<one-to-many class="Passenger"/>
+		</set>
+		
+		<set name="muber_drivers" cascade="all">
+			<key column="muber_id" not-null="false"/>
+			<one-to-many class="Driver"/>
 		</set>
 		
 		<set name="muber_trips" cascade="all">

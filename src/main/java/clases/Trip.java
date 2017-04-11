@@ -17,7 +17,9 @@ public class Trip {
 	private Date trip_date;
 	private String trip_from;
 	private String trip_to;
-	private Set<Passenger> trip_passengers = new HashSet<Passenger>();
+	private Collection<Passenger> trip_passengers = new HashSet<Passenger>();
+	private Driver trip_driver;
+	
 	
 	/**
 	 * 
@@ -79,8 +81,8 @@ public class Trip {
 	}
 
 	public void addPassenger(Passenger passenger){
-		
-		this.trip_passengers.add(passenger);
+		if(this.getTrip_numberOfpassengers() - this.getTrip_passengers().size() > 0)
+			this.trip_passengers.add(passenger);
 	}
 
 	/**
@@ -160,6 +162,22 @@ public class Trip {
 	 */
 	public void setTrip_passengers(Set<Passenger> trip_passengers) {
 		this.trip_passengers = trip_passengers;
+	}
+
+
+	/**
+	 * @return the trip_driver
+	 */
+	public Driver getTrip_driver() {
+		return trip_driver;
+	}
+
+
+	/**
+	 * @param trip_driver the trip_driver to set
+	 */
+	public void setTrip_driver(Driver trip_driver) {
+		this.trip_driver = trip_driver;
 	}
 	
 	

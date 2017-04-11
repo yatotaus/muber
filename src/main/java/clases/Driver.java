@@ -67,7 +67,7 @@ public class Driver extends User{
 	 * @return the driver_trips
 	 */
 	public Collection<Trip> getDriver_trips() {
-		return driver_trips;
+		return this.driver_trips;
 	}
 
 
@@ -78,7 +78,16 @@ public class Driver extends User{
 		this.driver_trips = driver_trips;
 	}
 
-
+	
+	/**
+	 * @param trip the trip to add 
+	 */
+	public void addTrip(Trip trip){
+		trip.setTrip_driver(this);
+		this.getDriver_trips().add(trip);
+	}
+	
+	
 	/**
 	 * @return the driver_scores
 	 */

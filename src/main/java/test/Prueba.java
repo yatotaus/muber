@@ -4,8 +4,6 @@ import java.io.File;
 import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,6 +15,7 @@ public class Prueba {
 	
 	private static SessionFactory sessionFactory = buildSessionFactory();
 	
+	@SuppressWarnings("deprecation")
 	private static SessionFactory buildSessionFactory(){
 		try {
 			return new Configuration().configure(new File("src/main/resources/hibernate/hibernate.cfg.xml")).buildSessionFactory();
@@ -29,8 +28,10 @@ public class Prueba {
 	}
 
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
-		//Puede persistir score, viajes y pasajeros
+		
+		//Puede persistir score, viajes y pasajeros 
 		
 		Driver driver = new Driver();
 		driver.setDriver_licence("Licencia#");
@@ -41,7 +42,7 @@ public class Prueba {
 		Driver driver2 = new Driver();
 		driver2.setDriver_licence("Licencia#");
 		driver2.setUser_date(new Date(10, 3, 2017));
-		driver2.setUser_name("Roberto Carlos");
+		driver2.setUser_name("Carlitos");
 		driver2.setUser_password("contraseña");
 
 		
@@ -51,37 +52,53 @@ public class Prueba {
 		Passenger margarita = new Passenger();
 		
 		german.setUser_name("Germán");
-		alicia.setUser_name("Alicia");
-		margarita.setUser_name("Margarita");
-		
-		alicia.setPassenger_credits(1500);
+		german.setUser_password("123");
 		german.setPassenger_credits(1500);
-		margarita.setPassenger_credits(1500);
+		german.setUser_date(new Date(11, 4, 2017));
 		
+		alicia.setUser_name("Alicia");
+		alicia.setUser_password("soyAlice");
+		alicia.setPassenger_credits(1500);
+		alicia.setUser_date(new Date(11, 4, 2017));
+		
+		margarita.setUser_name("Margarita");
+		margarita.setUser_password("soyunaflor");
+		margarita.setPassenger_credits(1500);
+		margarita.setUser_date(new Date(11, 4, 2017));
 		
 		Trip trip = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Mar del Plata");
 		Trip trip2 = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Córdoba");
+		
+		trip.setTrip_driver(driver);
+		trip.addPassenger(german);
+		trip.addPassenger(margarita);
+		trip.addPassenger(alicia);
+		
+		trip2.setTrip_driver(driver2);
+		trip2.addPassenger(alicia);
 		
 		Score score = new Score();
 		score.setScore_comment("Muy buen conductor");
 		score.setScore_number(4);	
 		
 		
-		
-		//SortedSet<User> users = new TreeSet<User>();
 		Set<Trip> trips = new HashSet<Trip>();
-		Set<User> users = new HashSet<User>();
+		Set<Passenger> passengers = new HashSet<Passenger>();
+		Set<Driver> drivers = new HashSet<Driver>();
+		
 		
 		trips.add(trip);
 		trips.add(trip2);
-		users.add(german);
-		users.add(margarita);
-		users.add(alicia);
-		//users.add(driver);
-		//users.add(driver2);
+		passengers.add(german);
+		passengers.add(margarita);
+		passengers.add(alicia);
+		drivers.add(driver);
+		drivers.add(driver2);
 		
-		Muber muber = new Muber(users, trips);				
+		
+		Muber muber = new Muber(passengers, drivers, trips);				
 
+		
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
 		s.save(muber);

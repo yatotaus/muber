@@ -13,10 +13,23 @@
 		<property name="trip_date" type="date" />
 		<property name="trip_from" type="string" />
 		<property name="trip_to" type="string" />
-		<!--  <property name="trip_passengers" /> -->
+		
+		<!-- 
+		<property name="trip_to" type="string" />
+		-->
+		
+		<!--  <property name="trip_passengers" /> 
 		<set name="trip_passengers" cascade="all">
 			<key column="passenger_id" not-null="false"/>
 			<one-to-many class="Passenger"/>
+		</set>
+		-->
+		
+		<many-to-one name="trip_driver" column="user_id" not-null="true" cascade="all"></many-to-one>
+		
+		<set name="trip_passengers" table="PASSENGERTRIP" cascade="all">
+			<key column="trip_id"></key>
+			<many-to-many class="Passenger" column="user_id"></many-to-many>
 		</set>
 		
 	</class>

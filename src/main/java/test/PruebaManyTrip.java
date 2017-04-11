@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import clases.Driver;
 import clases.Passenger;
 import clases.Trip;
 
@@ -17,6 +18,7 @@ public class PruebaManyTrip {
 	}
 	
 	
+	@SuppressWarnings("deprecation")
 	private static SessionFactory buildSessionFactory(){
 		try {
 			return new Configuration().configure(new File("src/main/resources/hibernate/hibernate.cfg.xml")).buildSessionFactory();
@@ -44,12 +46,20 @@ public class PruebaManyTrip {
 		german.setPassenger_credits(1500);
 		margarita.setPassenger_credits(1500);
 
+		Driver roberto = new Driver();
+		roberto.setUser_name("Roberto");
+		roberto.setDriver_licence("verde");
 		
+		
+		@SuppressWarnings("deprecation")
 		Trip t = new Trip(2000,4,new Date(22, 04, 2017),"La Plata", "Bariloche");
+		t.setTrip_numberOfpassengers(5);
+		t.setTrip_driver(roberto);
 		t.addPassenger(alicia);
 		t.addPassenger(margarita);
 		t.addPassenger(german);
 		
+		roberto.addTrip(t);
 		
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
