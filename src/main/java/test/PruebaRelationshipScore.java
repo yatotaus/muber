@@ -31,31 +31,37 @@ public class PruebaRelationshipScore {
 
 
 	public static void main(String[] args) throws SQLException {
-		
-		/*
+	
 		Trip trip = new Trip(900,4,new Date(22, 04, 2017),"La pampa", "Neuquen");
 		Score score = new Score();
 		Passenger p = new Passenger();
 		Driver d = new Driver();
 		
+		
+		d.setDriver_licence("10/10/2017");
+		d.setUser_date(new Date(10,10,2016));
+		d.setUser_name("Pedro");
+		d.setUser_password("Pablo");
+		
 		p.setUser_name("Conductor actual");
 		score.setScore_comment("Excelente viaje");
 		score.setScore_number(5);
-		/*score.setScore_passenger(p);
+		
+		score.setScore_autor(p);
 		score.setScore_trip(trip);
 		
 		trip.addScore(score);
 		
 		trip.setTrip_driver(d);
-		*/
 		
-		/*
+		
+		
 		trip.addPassenger(p);
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
 		s.save(trip);
 		s.getTransaction().commit();
-*/
+
 				
 	}
 	public PruebaRelationshipScore() {

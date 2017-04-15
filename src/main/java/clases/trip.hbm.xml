@@ -32,5 +32,10 @@
 			<many-to-many class="Passenger" column="user_id"></many-to-many>
 		</set>
 		
+		<set name="trip_scores" cascade="all">
+			<key column="trip_id"></key>
+			<one-to-many class="Score" ></one-to-many>
+		</set>
+		
 	</class>
 </hibernate-mapping>

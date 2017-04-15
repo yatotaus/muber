@@ -19,7 +19,7 @@ public class Trip {
 	private String trip_to;
 	private Collection<Passenger> trip_passengers = new HashSet<Passenger>();
 	private Driver trip_driver;
-	
+	private Set<Score> trip_scores= new HashSet<Score>();
 	
 	/**
 	 * 
@@ -177,6 +177,28 @@ public class Trip {
 
 	public void setTrip_passengers(Collection<Passenger> trip_passengers) {
 		this.trip_passengers = trip_passengers;
+	}
+
+
+	public void addScore(Score score) {
+		trip_scores.add(score);
+		
+	}
+
+
+	/**
+	 * @return the trip_scores
+	 */
+	public Set<Score> getTrip_scores() {
+		return trip_scores;
+	}
+
+
+	/**
+	 * @param trip_scores the trip_scores to set
+	 */
+	public void setTrip_scores(Set<Score> trip_scores) {
+		this.trip_scores = trip_scores;
 	}
 
 
