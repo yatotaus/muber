@@ -51,10 +51,9 @@ public class PruebaManyTrip {
 		roberto.setDriver_licence("verde");
 		
 		
-		@SuppressWarnings("deprecation")
 		Trip t = new Trip(2000,4,new Date(22, 04, 2017),"La Plata", "Bariloche");
 		t.setTrip_numberOfpassengers(5);
-		t.setTrip_driver(roberto);
+		//t.setTrip_driver(roberto);
 		t.addPassenger(alicia);
 		t.addPassenger(margarita);
 		t.addPassenger(german);

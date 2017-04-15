@@ -15,7 +15,6 @@ public class Prueba {
 	
 	private static SessionFactory sessionFactory = buildSessionFactory();
 	
-	@SuppressWarnings("deprecation")
 	private static SessionFactory buildSessionFactory(){
 		try {
 			return new Configuration().configure(new File("src/main/resources/hibernate/hibernate.cfg.xml")).buildSessionFactory();
@@ -28,11 +27,8 @@ public class Prueba {
 	}
 
 
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
-		
-		//Puede persistir score, viajes y pasajeros 
-		
+				
 		Driver driver = new Driver();
 		driver.setDriver_licence("Licencia#");
 		driver.setUser_date(new Date(10, 3, 2017));
@@ -69,17 +65,14 @@ public class Prueba {
 		Trip trip = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Mar del Plata");
 		Trip trip2 = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Córdoba");
 		
-		trip.setTrip_driver(driver);
-		trip.addPassenger(german);
-		trip.addPassenger(margarita);
-		trip.addPassenger(alicia);
 		
-		trip2.setTrip_driver(driver2);
+		//trip2.setTrip_driver(driver2);
+		
 		trip2.addPassenger(alicia);
 		
 		Score score = new Score();
 		score.setScore_comment("Muy buen conductor");
-		score.setScore_number(4);	
+		score.setScore_number(2);	
 		
 		
 		Set<Trip> trips = new HashSet<Trip>();
@@ -95,13 +88,12 @@ public class Prueba {
 		drivers.add(driver);
 		drivers.add(driver2);
 		
-		
 		Muber muber = new Muber(passengers, drivers, trips);				
 
 		
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
-		s.save(muber);
+		s.save(score);
 		s.getTransaction().commit();
 
 	}

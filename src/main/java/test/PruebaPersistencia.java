@@ -12,6 +12,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
+import clases.Driver;
 import clases.Passenger;
 import clases.Trip;
 
@@ -36,13 +37,18 @@ public class PruebaPersistencia extends TestCase {
 		}
 		public void testPrimerTest(){
 			
+			Driver d = new Driver();
 			Passenger u = new Passenger();
 			u.setCredits(1500);
 			u.setUser_date(new Date(10, 3, 2017));
 			u.setUser_name("German");
 			u.setUser_password("contraseña");
-			Trip t = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Tres Arroyos");
+			Trip t = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Caviahue");
+			
+			d.setUser_name("Nuevo conductor");
 
+			t.setTrip_driver(d);
+			
 			Session s = sessionFactory.getCurrentSession();
 			s.beginTransaction();
 			s.save(t);

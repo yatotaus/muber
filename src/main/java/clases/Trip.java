@@ -165,20 +165,20 @@ public class Trip {
 	}
 
 
-	/**
-	 * @return the trip_driver
-	 */
 	public Driver getTrip_driver() {
 		return trip_driver;
 	}
 
 
-	/**
-	 * @param trip_driver the trip_driver to set
-	 */
 	public void setTrip_driver(Driver trip_driver) {
 		this.trip_driver = trip_driver;
 	}
-	
+
+
+	public void setTrip_passengers(Collection<Passenger> trip_passengers) {
+		this.trip_passengers = trip_passengers;
+	}
+
+
 	
 }
