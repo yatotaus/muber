@@ -59,7 +59,7 @@ public class PruebaRelationshipScore {
 		trip.addPassenger(p);
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
-		s.save(trip);
+		s.save(score);
 		s.getTransaction().commit();
 
 				
