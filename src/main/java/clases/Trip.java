@@ -11,8 +11,8 @@ import java.util.HashSet;
 public class Trip {
 
 	private Long trip_id;
-	private int trip_cost;
-	private int trip_numberOfpassengers;
+	private Integer trip_cost;
+	private Integer trip_numberOfpassengers;
 	private Date trip_date;
 	private String trip_from;
 	private String trip_to;
@@ -40,11 +40,11 @@ public class Trip {
 	public Trip(int trip_cost, int trip_numberOfpassengers, Date trip_date, String trip_from,
 			String trip_to) {
 		super();
-		this.trip_cost = trip_cost;
-		this.trip_numberOfpassengers = trip_numberOfpassengers;
-		this.trip_date = trip_date;
-		this.trip_from = trip_from;
-		this.trip_to = trip_to;
+		this.setTrip_cost(trip_cost);
+		this.setTrip_date(trip_date);
+		this.setTrip_numberOfpassengers(trip_numberOfpassengers);
+		this.setTrip_from(trip_from);
+		this.setTrip_to(trip_to);
 	}
 
 	
@@ -67,7 +67,7 @@ public class Trip {
 	/**
 	 * @return the trip_cost
 	 */
-	public int getTrip_cost() {
+	public Integer getTrip_cost() {
 		return trip_cost;
 	}
 
@@ -75,7 +75,7 @@ public class Trip {
 	/**
 	 * @param trip_cost the trip_cost to set
 	 */
-	public void setTrip_cost(int trip_cost) {
+	public void setTrip_cost(Integer trip_cost) {
 		this.trip_cost = trip_cost;
 	}
 	
@@ -83,7 +83,7 @@ public class Trip {
 	/**
 	 * @return the trip_numberOfpassengers
 	 */
-	public int getTrip_numberOfpassengers() {
+	public Integer getTrip_numberOfpassengers() {
 		return trip_numberOfpassengers;
 	}
 
@@ -91,7 +91,7 @@ public class Trip {
 	/**
 	 * @param trip_numberOfpassengers the trip_numberOfpassengers to set
 	 */
-	public void setTrip_numberOfpassengers(int trip_numberOfpassengers) {
+	public void setTrip_numberOfpassengers(Integer trip_numberOfpassengers) {
 		this.trip_numberOfpassengers = trip_numberOfpassengers;
 	}
 
@@ -206,8 +206,8 @@ public class Trip {
 	 */
 	public void addPassenger(Passenger passenger){
 		if(this.getTrip_numberOfpassengers() - this.getTrip_passengers().size() > 0)
-			this.trip_passengers.add(passenger);
-	}
+			this.getTrip_passengers().add(passenger);
+		}
 
-	
+
 }
