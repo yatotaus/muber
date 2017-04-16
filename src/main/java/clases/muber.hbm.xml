@@ -9,7 +9,6 @@
 			<generator class="native" />
 		</id>
 		
-		
 		<set name="muber_passengers" cascade="all">
 			<key column="muber_id" not-null="false"/>
 			<one-to-many class="Passenger"/>
@@ -24,21 +23,6 @@
 			<key column="muber_id" not-null="false"/>
 			<one-to-many class="Trip"/>
 		</set>
-		
-		<!-- 
-		
-		<set name="muber_trips" cascade="all">
-			<key column="trip_id" not-null="true"/>
-			<one-to-many class="Trip"/>
-		</set>
-		
-		<set name="muber_users" cascade="all">
-			<key column="user_id" not-null="true"/>
-			<one-to-many class="Passenger"/>
-		</set>
-		
-		 -->
-		
-		
+				
 	</class>
 </hibernate-mapping>

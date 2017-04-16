@@ -8,6 +8,7 @@
 		<id name="trip_id" column="TRIP_ID" type="long">
 			<generator class="native" />
 		</id>
+		
 		<property name="trip_cost" type="int" />
 		<property name="trip_numberOfpassengers" type="int" />
 		<property name="trip_date" type="date" />

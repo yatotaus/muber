@@ -3,7 +3,6 @@ package clases;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @author yato
@@ -17,15 +16,17 @@ public class Trip {
 	private Date trip_date;
 	private String trip_from;
 	private String trip_to;
-	private Collection<Passenger> trip_passengers = new HashSet<Passenger>();
 	private Driver trip_driver;
-	private Set<Score> trip_scores= new HashSet<Score>();
+	private Collection<Score> trip_scores;
+	private Collection<Passenger> trip_passengers;
+	
 	
 	/**
 	 * 
 	 */
 	public Trip(){
 		this.setTrip_passengers(new HashSet<Passenger>());
+		this.setTrip_scores(new HashSet<Score>());
 	}
 	
 	
@@ -47,8 +48,6 @@ public class Trip {
 	}
 
 	
-	
-
 	/**
 	 * @return the trip_id
 	 */
@@ -79,12 +78,8 @@ public class Trip {
 	public void setTrip_cost(int trip_cost) {
 		this.trip_cost = trip_cost;
 	}
-
-	public void addPassenger(Passenger passenger){
-		if(this.getTrip_numberOfpassengers() - this.getTrip_passengers().size() > 0)
-			this.trip_passengers.add(passenger);
-	}
-
+	
+	
 	/**
 	 * @return the trip_numberOfpassengers
 	 */
@@ -160,47 +155,59 @@ public class Trip {
 	/**
 	 * @param trip_passengers the trip_passengers to set
 	 */
-	public void setTrip_passengers(Set<Passenger> trip_passengers) {
-		this.trip_passengers = trip_passengers;
-	}
-
-
-	public Driver getTrip_driver() {
-		return trip_driver;
-	}
-
-
-	public void setTrip_driver(Driver trip_driver) {
-		this.trip_driver = trip_driver;
-	}
-
-
 	public void setTrip_passengers(Collection<Passenger> trip_passengers) {
 		this.trip_passengers = trip_passengers;
 	}
 
+	
+	/**
+	 * @return the trip_driver
+	 */
+	public Driver getTrip_driver() {
+		return trip_driver;
+	}
 
+	
+	/**
+	 * @param trip_driver the trip_driver to set
+	 */
+	public void setTrip_driver(Driver trip_driver) {
+		this.trip_driver = trip_driver;
+	}
+
+	
+	/**
+	 * @return the trip_scores
+	 */
+	public Collection<Score> getTrip_scores() {
+		return trip_scores;
+	}
+	
+
+	/**
+	 * @param trip_scores the trip_scores to set
+	 */
+	public void setTrip_scores(Collection<Score> trip_scores) {
+		this.trip_scores = trip_scores;
+	}
+
+
+	/**
+	 * @param score the trip_scores to add
+	 */
 	public void addScore(Score score) {
 		trip_scores.add(score);
 		
 	}
 
-
+	
 	/**
-	 * @return the trip_scores
+	 * @param passenger agrega pasajero al viaje si hay espacio disponible
 	 */
-	public Set<Score> getTrip_scores() {
-		return trip_scores;
+	public void addPassenger(Passenger passenger){
+		if(this.getTrip_numberOfpassengers() - this.getTrip_passengers().size() > 0)
+			this.trip_passengers.add(passenger);
 	}
-
-
-	/**
-	 * @param trip_scores the trip_scores to set
-	 */
-	public void setTrip_scores(Set<Score> trip_scores) {
-		this.trip_scores = trip_scores;
-	}
-
 
 	
 }

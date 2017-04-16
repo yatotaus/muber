@@ -1,6 +1,3 @@
-/**
- * 
- */
 package clases;
 
 import java.sql.Date;
@@ -21,11 +18,14 @@ public class Passenger extends User {
 	
 	
 	/**
-	 * 
+	 * @param passenger_name
+	 * @param passenger_password
+	 * @param passenger_date
+	 * @param passenger_credits
 	 */
-	public Passenger(String name, String password, Date date, double credits){
-		super(name, password, date);
-		this.setPassenger_credits(credits);
+	public Passenger(String passenger_name, String passenger_password, Date passenger_date, double passenger_credits){
+		super(passenger_name, passenger_password, passenger_date);
+		this.setPassenger_credits(passenger_credits);
 	}
 	
 	
@@ -45,11 +45,17 @@ public class Passenger extends User {
 	}	
 	
 	
+	/**
+	 * @return the user_id
+	 */
 	public Long getUser_id() {
 		return user_id;
 	}
 
 
+	/**
+	 * @param user_id the user_id to set
+	 */
 	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}

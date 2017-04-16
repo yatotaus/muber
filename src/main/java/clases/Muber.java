@@ -8,9 +8,12 @@ public class Muber {
 	private Long muber_id;
 	private Collection<Passenger> muber_passengers;
 	private Collection<Driver> muber_drivers;
-	private  Collection<Trip> muber_trips;
+	private Collection<Trip> muber_trips;
 	
 	
+	/**
+	 * 
+	 */
 	public Muber(){
 		this.setMuber_trips(new HashSet<Trip>());
 		this.setMuber_passengers(new HashSet<Passenger>());
@@ -96,7 +99,7 @@ public class Muber {
 	
 	
 	/**
-	 * add aDriver to muber_drivers
+	 * agrega aDriver a la colección muber_drivers
 	 */
 	public void addDriver(Driver aDriver) {
 		this.getMuber_drivers().add(aDriver);
@@ -104,29 +107,42 @@ public class Muber {
 	
 	
 	/**
-	 * add aPassenger to muber_passengers
+	 * agrega aPassenger a la colección muber_passengers
 	 */
 	public void addPassenger(Passenger aPassenger){
 		this.getMuber_passengers().add(aPassenger);
 	}
 	
 	
+	/**
+	 * agrega aDriver a un viaje
+	 * agrega aTrip a la colección muber_trips
+	 */
 	public void addTripBy(Trip aTrip, Driver aDriver){
 		aTrip.setTrip_driver(aDriver);
 		this.getMuber_trips().add(aTrip);
 	}
 	
 	
+	/**
+	 * agrega aPassenger a la colección de pasajeros del viaje
+	 */
 	public void addPassengerToTrip(Trip aTrip, Passenger aPassenger){
 		aTrip.addPassenger(aPassenger);
 	}
 	
 	
+	/**
+	 * agrega aPassenger como autor de la calificación 
+	 * agrega aTrip al viaje que pertenece dicha calificación
+	 * agrega aScore a la colección de calificaciones del viaje aTrip
+	 */
 	public void qualifyTrip(Trip aTrip, Passenger aPassenger, Score aScore ){
 		aScore.setScore_autor(aPassenger);
 		aScore.setScore_trip(aTrip);
 		aTrip.addScore(aScore);
 	}
+	
 	
 }
 

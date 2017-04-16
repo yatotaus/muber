@@ -1,6 +1,3 @@
-/**
- * 
- */
 package clases;
 
 import java.sql.Date;
@@ -25,11 +22,14 @@ public class Driver extends User{
 	
 	
 	/**
-	 * 
+	 * @param driver_name
+	 * @param driver_password
+	 * @param driver_date
+	 * @param driver_license
 	 */
-	public Driver(String name,  String password, Date date, String license){
-		super(name, password, date);
-		this.setDriver_license(license);
+	public Driver(String driver_name,  String driver_password, Date driver_date, String driver_license){
+		super(driver_name, driver_password, driver_date);
+		this.setDriver_license(driver_license);
 	}
 
 	
@@ -41,10 +41,12 @@ public class Driver extends User{
 	}
 
 	
+	/**
+	 * @param user_id the user_id to set
+	 */
 	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
-
 
 
 	/**
@@ -80,7 +82,8 @@ public class Driver extends User{
 
 	
 	/**
-	 * @param trip the trip to add 
+	 * agrega al viaje trip el conductor
+	 * agrega a la colección driver_trips el viaje trip  
 	 */
 	public void addTrip(Trip trip){
 		trip.setTrip_driver(this);

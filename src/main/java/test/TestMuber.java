@@ -57,12 +57,15 @@ public class TestMuber {
 		muber.addPassenger(alicia);
 		muber.addPassenger(margarita);
 	
+		/*	Asigna chofer a un viaje determinado	*/
 		muber.addTripBy(trip, roberto);
 		
+		/*	Agrega los pasajeros a un viaje	*/
 		muber.addPassengerToTrip(trip, german);
 		muber.addPassengerToTrip(trip, alicia);
 		muber.addPassengerToTrip(trip, margarita);
 		
+		/*	Agrega las calificaciones al viaje trip	*/
 		muber.qualifyTrip(trip, german, new Score("Buen viaje", 5));
 		muber.qualifyTrip(trip, alicia, new Score("volvería a viajar", 4));
 		muber.qualifyTrip(trip, margarita, new Score("Rapidísimo", 5));

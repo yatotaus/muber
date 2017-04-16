@@ -8,11 +8,11 @@
 		<id name="score_id" column="USER_ID" type="long">
 			<generator class="native" />
 		</id>
+		
 		<property name="score_comment" type="string" />
 		<property name="score_number" type="int" />
 				
 		<many-to-one name="score_trip" class="Trip" cascade="save-update"></many-to-one>				
 		
 	</class>
-
 </hibernate-mapping>
