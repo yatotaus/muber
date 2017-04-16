@@ -10,8 +10,8 @@
 		</id>
 		<property name="score_comment" type="string" />
 		<property name="score_number" type="int" />
-		<one-to-one name="score_autor" class="Passenger" cascade="save-update"></one-to-one>
-		<one-to-one name="score_trip" class="Trip" cascade="save-update"></one-to-one>				
+				
+		<many-to-one name="score_trip" class="Trip" cascade="save-update"></many-to-one>				
 		
 	</class>
 

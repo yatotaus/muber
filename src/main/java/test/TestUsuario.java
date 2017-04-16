@@ -40,7 +40,7 @@ public class TestUsuario extends TestCase {
 		
 		//Persiste User
 		Driver user = new Driver();
-		user.setDriver_licence("Licencia#");
+		user.setDriver_license("Licencia#");
 		user.setUser_date(new Date(10, 3, 2017));
 		user.setUser_name("German");
 		user.setUser_password("contraseña");

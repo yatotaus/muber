@@ -95,5 +95,38 @@ public class Muber {
 	}
 	
 	
+	/**
+	 * add aDriver to muber_drivers
+	 */
+	public void addDriver(Driver aDriver) {
+		this.getMuber_drivers().add(aDriver);
+	}
+	
+	
+	/**
+	 * add aPassenger to muber_passengers
+	 */
+	public void addPassenger(Passenger aPassenger){
+		this.getMuber_passengers().add(aPassenger);
+	}
+	
+	
+	public void addTripBy(Trip aTrip, Driver aDriver){
+		aTrip.setTrip_driver(aDriver);
+		this.getMuber_trips().add(aTrip);
+	}
+	
+	
+	public void addPassengerToTrip(Trip aTrip, Passenger aPassenger){
+		aTrip.addPassenger(aPassenger);
+	}
+	
+	
+	public void qualifyTrip(Trip aTrip, Passenger aPassenger, Score aScore ){
+		aScore.setScore_autor(aPassenger);
+		aScore.setScore_trip(aTrip);
+		aTrip.addScore(aScore);
+	}
+	
 }
 

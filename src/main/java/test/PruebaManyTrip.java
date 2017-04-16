@@ -42,13 +42,13 @@ public class PruebaManyTrip {
 		alicia.setUser_name("Alicia");
 		margarita.setUser_name("Margarita");
 		
-		alicia.setPassenger_credits(1500);
-		german.setPassenger_credits(1500);
-		margarita.setPassenger_credits(1500);
+		alicia.setPassenger_credits(1500.0);
+		german.setPassenger_credits(1500.0);
+		margarita.setPassenger_credits(1500.0);
 
 		Driver roberto = new Driver();
 		roberto.setUser_name("Roberto");
-		roberto.setDriver_licence("verde");
+		roberto.setDriver_license("verde");
 		
 		
 		Trip t = new Trip(2000,4,new Date(22, 04, 2017),"La Plata", "Bariloche");

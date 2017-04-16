@@ -11,7 +11,7 @@
 		<property name="user_name" not-null="true" type="string" />
 		<property name="user_password" type="string" />
 		<property name="user_date" type="date" />
-		<property name="driver_licence" type="string"/>
+		<property name="driver_license" type="string"/>
 		
 		<bag name="driver_trips" inverse="false">
 			<key column="user_id"></key>

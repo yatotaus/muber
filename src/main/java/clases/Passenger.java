@@ -3,8 +3,7 @@
  */
 package clases;
 
-import java.util.Collection;
-import java.util.HashSet;
+import java.sql.Date;
 
 /**
  * @author yato
@@ -13,22 +12,37 @@ import java.util.HashSet;
 public class Passenger extends User {
 	
 	private Long user_id;
-	private Integer passenger_credits = 0;
-	private Collection<Score> passenger_scores;
+	private Double passenger_credits;
 
 	
-	public Integer getPassenger_credits() {
+	public Passenger(){
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	/**
+	 * 
+	 */
+	public Passenger(String name, String password, Date date, double credits){
+		super(name, password, date);
+		this.setPassenger_credits(credits);
+	}
+	
+	
+	/**
+	 * @return the credits
+	 */
+	public Double getPassenger_credits() {
 		return passenger_credits;
 	}
 
-
-	public void setPassenger_credits(Integer passenger_credits) {
+	
+	/**
+	 * @param passenger_credits the passenger_credits to set
+	 */
+	public void setPassenger_credits(Double passenger_credits) {
 		this.passenger_credits = passenger_credits;
 	}	
-	
-	public Passenger(){
-		this.setPassenger_scores(new HashSet<Score>());
-	}
 	
 	
 	public Long getUser_id() {
@@ -38,47 +52,6 @@ public class Passenger extends User {
 
 	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
-	}
-
-
-	/**
-	 * 
-	 */
-	public Passenger(Integer credits) {
-		super();
-		this.setCredits(credits);	
-	}
-	
-	
-	/**
-	 * @return the credits
-	 */
-	public Integer getCredits() {
-		return passenger_credits;
-	}
-	
-	
-	/**
-	 * @param credits the credits to set
-	 */
-	public void setCredits(Integer credits) {
-		this.passenger_credits = credits;
-	}
-
-
-	/**
-	 * @return the passenger_scores
-	 */
-	public Collection<Score> getPassenger_scores() {
-		return passenger_scores;
-	}
-
-
-	/**
-	 * @param passenger_scores the passenger_scores to set
-	 */
-	public void setPassenger_scores(Collection<Score> passenger_scores) {
-		this.passenger_scores = passenger_scores;
 	}
 
 	

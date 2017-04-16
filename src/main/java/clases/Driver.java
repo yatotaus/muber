@@ -3,6 +3,7 @@
  */
 package clases;
 
+import java.sql.Date;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -13,34 +14,33 @@ import java.util.HashSet;
 
 public class Driver extends User{
 	
-	private String driver_licence;
-	
-	/**
-	 * ver esta variable, el viaje deberia conocer el conductor o no, o ambos ¿? 
-	 * 
-	 */
 	private Long user_id;
+	private String driver_license;
 	private Collection<Trip> driver_trips; 
-	private Collection<Score> driver_scores;
 	
 	
 	public Driver(){
-		this.setDriver_scores(new HashSet<Score>());
 		this.setDriver_trips(new HashSet<Trip>());
 	}
+	
 	
 	/**
 	 * 
 	 */
-	public Driver(String licence) {
-		super();
-		this.setDriver_licence(licence);
+	public Driver(String name,  String password, Date date, String license){
+		super(name, password, date);
+		this.setDriver_license(license);
 	}
 
+	
+	/**
+	 * @return the user_id
+	 */
 	public Long getUser_id() {
 		return user_id;
 	}
 
+	
 	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
@@ -48,18 +48,18 @@ public class Driver extends User{
 
 
 	/**
-	 * @return the driver_licence
+	 * @return the driver_license
 	 */
-	public String getDriver_licence() {
-		return driver_licence;
+	public String getDriver_license() {
+		return driver_license;
 	}
 
 	
 	/**
 	 * @param driver_licence the driver_licence to set
 	 */
-	public void setDriver_licence(String driver_licence) {
-		this.driver_licence = driver_licence;
+	public void setDriver_license(String driver_license) {
+		this.driver_license = driver_license;
 	}
 
 
@@ -85,22 +85,6 @@ public class Driver extends User{
 	public void addTrip(Trip trip){
 		trip.setTrip_driver(this);
 		this.getDriver_trips().add(trip);
-	}
-	
-	
-	/**
-	 * @return the driver_scores
-	 */
-	public Collection<Score> getDriver_scores() {
-		return driver_scores;
-	}
-
-
-	/**
-	 * @param driver_scores the driver_scores to set
-	 */
-	public void setDriver_scores(Collection<Score> driver_scores) {
-		this.driver_scores = driver_scores;
 	}
 
 	

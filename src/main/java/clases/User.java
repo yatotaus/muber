@@ -24,11 +24,11 @@ public abstract class User {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public User (String name, String password){
+	public User (String name, String password, Date date){
 		this();
 		this.user_name = name; 
 		this.user_password = password;
-		this.user_date = new Date();			//ver fecha
+		this.user_date = new Date();			
 		 
 	}
 

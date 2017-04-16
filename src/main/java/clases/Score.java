@@ -25,8 +25,8 @@ public class Score {
 	
 	public Score(String score_comment, Integer score_number) {
 		super();
-		this.score_comment = score_comment;
-		this.score_number = score_number;
+		this.setScore_comment(score_comment);
+		this.setScore_number(score_number);
 	}
 
 
@@ -37,19 +37,31 @@ public class Score {
 	public void setScore_id(Long score_id) {
 		this.score_id = score_id;
 	}
-
+	
+	/**
+	 * @return the score_comment
+	 */
 	public String getScore_comment() {
 		return score_comment;
 	}
-
+	
+	/**
+	 * @param score_comment the score_comment to set
+	 */
 	public void setScore_comment(String score_comment) {
 		this.score_comment = score_comment;
 	}
-
+	
+	/**
+	 * @return the score_number
+	 */
 	public Integer getScore_number() {
 		return score_number;
 	}
-
+	
+	/**
+	 * @param score_number the score_number to set
+	 */
 	public void setScore_number(Integer score_number) {
 		this.score_number = score_number;
 	}

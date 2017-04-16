@@ -15,6 +15,7 @@ public class Prueba {
 	
 	private static SessionFactory sessionFactory = buildSessionFactory();
 	
+	@SuppressWarnings("deprecation")
 	private static SessionFactory buildSessionFactory(){
 		try {
 			return new Configuration().configure(new File("src/main/resources/hibernate/hibernate.cfg.xml")).buildSessionFactory();
@@ -30,13 +31,13 @@ public class Prueba {
 	public static void main(String[] args) {
 				
 		Driver driver = new Driver();
-		driver.setDriver_licence("Licencia#");
+		driver.setDriver_license("Licencia#");
 		driver.setUser_date(new Date(10, 3, 2017));
 		driver.setUser_name("Roberto");
 		driver.setUser_password("contraseña");
 		
 		Driver driver2 = new Driver();
-		driver2.setDriver_licence("Licencia#");
+		driver2.setDriver_license("Licencia#");
 		driver2.setUser_date(new Date(10, 3, 2017));
 		driver2.setUser_name("Carlitos");
 		driver2.setUser_password("contraseña");
@@ -49,17 +50,17 @@ public class Prueba {
 		
 		german.setUser_name("Germán");
 		german.setUser_password("123");
-		german.setPassenger_credits(1500);
+		german.setPassenger_credits(1500.0);
 		german.setUser_date(new Date(11, 4, 2017));
 		
 		alicia.setUser_name("Alicia");
 		alicia.setUser_password("soyAlice");
-		alicia.setPassenger_credits(1500);
+		alicia.setPassenger_credits(1500.0);
 		alicia.setUser_date(new Date(11, 4, 2017));
 		
 		margarita.setUser_name("Margarita");
 		margarita.setUser_password("soyunaflor");
-		margarita.setPassenger_credits(1500);
+		margarita.setPassenger_credits(1500.0);
 		margarita.setUser_date(new Date(11, 4, 2017));
 		
 		Trip trip = new Trip(900,4,new Date(22, 04, 2017),"La Plata", "Mar del Plata");
