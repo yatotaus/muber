@@ -135,7 +135,12 @@ public class Muber {
 	/**
 	 * agrega aPassenger como autor de la calificación 
 	 * agrega aTrip al viaje que pertenece dicha calificación
-	 * agrega aScore a la colección de calificaciones del viaje aTrip
+	 * agrega aScore a la colección de calificaciones del viaje aTrip.
+	 * 
+	 * Tampoco tenemos definidas las reglas de negocio sobre el control
+	 * de las fechas. De momento no verificamos que el pasajero que 
+	 * califica haya participado del viaje. En un futuro al implementar
+	 * la capa de negocio se verificarán estas cosas.
 	 */
 	public void qualifyTrip(Trip aTrip, Passenger aPassenger, Score aScore ){
 		aScore.setScore_autor(aPassenger);
