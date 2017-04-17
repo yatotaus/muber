@@ -3,6 +3,7 @@ package clases;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -214,6 +215,23 @@ public class Trip {
 	public void addPassenger(Passenger passenger){
 		if(this.getTrip_numberOfpassengers() - this.getTrip_passengers().size() > 0)
 			this.trip_passengers.add(passenger);
+	}
+	
+	/*
+	 *Mensaje que sirve para descontar el crédito a los pasajeros que participaron de un viaje.
+	 *
+	 *No contamos con las reglas de negocio completamente definidas para la implementación del mismo. 
+	 *Podría ocurrir que un pasajero quede con créditos negativos. Desconocemos como se espera que el
+	 *sistema verifique esto. Asumimos que los créditos son enteros  
+	 * */
+	public void discountCredit(){
+		int passengerNumber = trip_passengers.size() + 1;
+		Passenger passenger;
+		Iterator iterator = trip_passengers.iterator(); 
+		while(iterator.hasNext()){
+			passenger = (Passenger) iterator.next();
+			passenger.setPassenger_credits(passenger.getPassenger_credits() - trip_cost/passengerNumber);
+		}
 	}
 	
 	

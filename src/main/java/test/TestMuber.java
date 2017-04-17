@@ -65,12 +65,13 @@ public class TestMuber {
 		muber.addPassengerToTrip(trip, alicia);
 		muber.addPassengerToTrip(trip, margarita);
 		
+		trip.discountCredit();		
 		/*	Agrega las calificaciones al viaje trip	*/
 		muber.qualifyTrip(trip, german, new Score("Buen viaje", 5));
-		muber.qualifyTrip(trip, alicia, new Score("volvería a viajar", 4));
-		muber.qualifyTrip(trip, margarita, new Score("Rapidísimo", 5));
+		muber.qualifyTrip(trip, alicia, new Score("Volvería a viajar", 4));
+		muber.qualifyTrip(trip, margarita, new Score("Rapidísimo", 4));
 		
-	
+		
 		Session s = sessionFactory.getCurrentSession();
 		s.beginTransaction();
 		s.save(muber);
