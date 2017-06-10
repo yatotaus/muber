@@ -1,7 +1,6 @@
 package clases;
-
-import java.sql.Date;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -12,199 +11,139 @@ import java.util.Set;
  */
 public class Trip {
 
-	private Long trip_id;
-	private int trip_cost;
-	private int trip_numberOfpassengers;
-	private Date trip_date;
-	private String trip_from;
-	private String trip_to;
-	private Collection<Passenger> trip_passengers = new HashSet<Passenger>();
-	private Driver trip_driver;
-	private Set<Score> trip_scores= new HashSet<Score>();
+	private Long idTrip;
+	private Float cost;
+	private int numberOfpassengers;
+	private Date date;
+	private String fromTrip;
+	private String destiny;
+	private Collection<Passenger> passengers = new HashSet<Passenger>();
+	private Driver driver;
+	private Set<Score> scores= new HashSet<Score>();
+	private String state="enable";
 	
 	/**
 	 * 
 	 */
 	public Trip(){
-		this.setTrip_passengers(new HashSet<Passenger>());
+		this.setPassengers(new HashSet<Passenger>());
 	}
 	
 	
 	/**
 	 * @param trip_cost
 	 * @param trip_numberOfpassengers
-	 * @param trip_date
+	 * @param date
 	 * @param trip_from
 	 * @param trip_to
 	 */
-	public Trip(int trip_cost, int trip_numberOfpassengers, Date trip_date, String trip_from,
+	public Trip(Float trip_cost, int trip_numberOfpassengers,Date date, String trip_from,
 			String trip_to) {
 		super();
-		this.setTrip_cost(trip_cost);
-		this.setTrip_date(trip_date);
-		this.setTrip_numberOfpassengers(trip_numberOfpassengers);
-		this.setTrip_from(trip_from);
-		this.setTrip_to(trip_to);
+		this.setCost(trip_cost);
+		this.setDate(date);
+		this.setNumberOfpassengers(trip_numberOfpassengers);
+		this.setFromTrip(trip_from);
+		this.setDestiny(trip_to);
 	}
 
 	
-	/**
-	 * @return the trip_id
-	 */
-	public Long getTrip_id() {
-		return trip_id;
-	}
-
-
-	/**
-	 * @param trip_id the trip_id to set
-	 */
-	public void setTrip_id(Long trip_id) {
-		this.trip_id = trip_id;
-	}
-
-
-	/**
-	 * @return the trip_cost
-	 */
-	public int getTrip_cost() {
-		return trip_cost;
-	}
-
-
-	/**
-	 * @param trip_cost the trip_cost to set
-	 */
-	public void setTrip_cost(int trip_cost) {
-		this.trip_cost = trip_cost;
-	}
-
 	
-	/**
-	 * @return the trip_numberOfpassengers
-	 */
-	public int getTrip_numberOfpassengers() {
-		return trip_numberOfpassengers;
+	public Long getIdTrip() {
+		return idTrip;
 	}
 
 
-	/**
-	 * @param trip_numberOfpassengers the trip_numberOfpassengers to set
-	 */
-	public void setTrip_numberOfpassengers(int trip_numberOfpassengers) {
-		this.trip_numberOfpassengers = trip_numberOfpassengers;
+	public void setIdTrip(Long idTrip) {
+		this.idTrip = idTrip;
 	}
 
 
-	/**
-	 * @return the trip_date
-	 */
-	public Date getTrip_date() {
-		return trip_date;
+	public Float getCost() {
+		return cost;
 	}
 
 
-	/**
-	 * @param trip_date the trip_date to set
-	 */
-	public void setTrip_date(Date trip_date) {
-		this.trip_date = trip_date;
+	public void setCost(Float cost) {
+		this.cost = cost;
 	}
 
 
-	/**
-	 * @return the trip_from
-	 */
-	public String getTrip_from() {
-		return trip_from;
+	public int getNumberOfpassengers() {
+		return numberOfpassengers;
 	}
 
 
-	/**
-	 * @param trip_from the trip_from to set
-	 */
-	public void setTrip_from(String trip_from) {
-		this.trip_from = trip_from;
+	public void setNumberOfpassengers(int numberOfpassengers) {
+		this.numberOfpassengers = numberOfpassengers;
 	}
 
 
-	/**
-	 * @return the trip_to
-	 */
-	public String getTrip_to() {
-		return trip_to;
+	public Date getDate() {
+		return date;
 	}
 
 
-	/**
-	 * @param trip_to the trip_to to set
-	 */
-	public void setTrip_to(String trip_to) {
-		this.trip_to = trip_to;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 
-	/**
-	 * @return the trip_passengers
-	 */
-	public Collection<Passenger> getTrip_passengers() {
-		return trip_passengers;
+	public String getFromTrip() {
+		return fromTrip;
 	}
 
 
-	/**
-	 * @param trip_passengers the trip_passengers to set
-	 */
-	public void setTrip_passengers(Set<Passenger> trip_passengers) {
-		this.trip_passengers = trip_passengers;
+	public void setFromTrip(String from) {
+		this.fromTrip = from;
 	}
 
 
-	/**
-	 * @return the trip_driver
-	 */
-	public Driver getTrip_driver() {
-		return trip_driver;
+	public String getDestiny() {
+		return destiny;
 	}
 
 
-	/**
-	 * @param trip_driver the trip_driver to set
-	 */
-	public void setTrip_driver(Driver trip_driver) {
-		this.trip_driver = trip_driver;
+	public void setDestiny(String to) {
+		this.destiny = to;
 	}
 
 
-	/**
-	 * @param trip_passengers the trip_passengers to set
-	 */
-	public void setTrip_passengers(Collection<Passenger> trip_passengers) {
-		this.trip_passengers = trip_passengers;
+	public Collection<Passenger> getPassengers() {
+		return passengers;
 	}
 
 
-	/**
-	 * @return the trip_scores
-	 */
-	public Set<Score> getTrip_scores() {
-		return trip_scores;
+	public void setPassengers(Collection<Passenger> passengers) {
+		this.passengers = passengers;
 	}
 
 
-	/**
-	 * @param trip_scores the trip_scores to set
-	 */
-	public void setTrip_scores(Set<Score> trip_scores) {
-		this.trip_scores = trip_scores;
+	public Driver getDriver() {
+		return driver;
 	}
 
-	
+
+	public void setDriver(Driver driver) {
+		this.driver = driver;
+	}
+
+
+	public Set<Score> getScores() {
+		return scores;
+	}
+
+
+	public void setScores(Set<Score> scores) {
+		this.scores = scores;
+	}
+
+
 	/**
 	 * @param score the trip_scores to add
 	 */
 	public void addScore(Score score) {
-		trip_scores.add(score);
+		scores.add(score);
 		
 	}
 
@@ -213,10 +152,22 @@ public class Trip {
 	 * @param passenger agrega pasajero al viaje si hay espacio disponible
 	 */
 	public void addPassenger(Passenger passenger){
-		if(this.getTrip_numberOfpassengers() - this.getTrip_passengers().size() > 0)
-			this.trip_passengers.add(passenger);
+		if(this.getNumberOfpassengers() - this.getPassengers().size() > 0)
+			this.passengers.add(passenger);
 	}
 	
+	
+	
+	public String getState() {
+		return state;
+	}
+
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+
 	/*
 	 *Mensaje que sirve para descontar el crédito a los pasajeros que participaron de un viaje.
 	 *
@@ -225,12 +176,12 @@ public class Trip {
 	 *sistema verifique esto. Asumimos que los créditos son enteros  
 	 * */
 	public void discountCredit(){
-		int passengerNumber = trip_passengers.size() + 1;
+		int passengerNumber = passengers.size() + 1;
 		Passenger passenger;
-		Iterator iterator = trip_passengers.iterator(); 
+		Iterator iterator = passengers.iterator(); 
 		while(iterator.hasNext()){
 			passenger = (Passenger) iterator.next();
-			passenger.setPassenger_credits(passenger.getPassenger_credits() - trip_cost/passengerNumber);
+			passenger.setCredits(passenger.getCredits() - cost/passengerNumber);
 		}
 	}
 	

@@ -5,13 +5,25 @@
 
 <hibernate-mapping package="clases">
 	<class name="User" table="USER">
-		<id name="user_id" column="USER_ID" type="long">
+		<id name="idUser" column="USER_ID" type="long">
 			<generator class="native" />
 		</id>
+		<discriminator column="tipoUsuario" type="string"/>
 		
-		<property name="user_name" not-null="true" type="string" />
-		<property name="user_password" type="string" />
-		<property name="user_date" type="date" />
+		<property name="name" not-null="true" type="string" />
+		<property name="password" type="string" />
+		<property name="date" type="date" />
+		<subclass name="Passenger" discriminator-value="Passenger">
+			<property name="credits" type="double"/>
+		</subclass>
+		
+		<subclass name="Driver" discriminator-value="Drivers">
+			<property name="license" type="string"/>
+			<bag name="trips" inverse="false">
+				<key column="idUser"></key>
+				<one-to-many class="Trip" />
+			</bag>
+		</subclass>
 		
 	</class>
 </hibernate-mapping>

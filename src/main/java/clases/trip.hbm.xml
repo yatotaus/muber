@@ -5,26 +5,27 @@
 
 <hibernate-mapping package="clases">
 	<class name="Trip" table="TRIP">
-		<id name="trip_id" column="TRIP_ID" type="long">
+		<id name="idTrip" column="TRIP_ID" type="long">
 			<generator class="native" />
 		</id>
 		
-		<property name="trip_cost" type="int" />
-		<property name="trip_numberOfpassengers" type="int" />
-		<property name="trip_date" type="date" />
-		<property name="trip_from" type="string" />
-		<property name="trip_to" type="string" />
+		<property name="cost" type="float" />
+		<property name="numberOfpassengers" type="int" />
+		<property name="date" type="date" />
+		<property name="fromTrip" type="string" />
+		<property name="destiny" type="string" />
+		<property name="state" type="string" />
 		
 		
-		<many-to-one name="trip_driver" column="user_id" not-null="true" cascade="all"></many-to-one>
+		<!-- <many-to-one name="driver" column="idDriver" not-null="true" cascade="all"></many-to-one>  -->
 		
-		<set name="trip_passengers" table="PASSENGERTRIP" cascade="all">
-			<key column="trip_id"></key>
-			<many-to-many class="Passenger" column="user_id"></many-to-many>
+		<set name="passengers" table="PASSENGERTRIP" cascade="all">
+			<key column="idTrip"></key>
+			<many-to-many class="Passenger" column="idUser"></many-to-many>
 		</set>
 		
-		<set name="trip_scores" cascade="all">
-			<key column="trip_id"></key>
+		<set name="scores" cascade="all">
+			<key column="idTrip"></key>
 			<one-to-many class="Score" ></one-to-many>
 		</set>
 		

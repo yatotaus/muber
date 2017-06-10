@@ -43,7 +43,7 @@ public class TestMuber {
 		
 		Muber muber = new Muber();
 		
-		Trip trip = new Trip(900, 4, date, "La Plata", "Tres Arroyos");
+		Trip trip = new Trip(900f, 4, date, "La Plata", "Tres Arroyos");
 		
 		Driver roberto = new Driver("Roberto", "robertito", date, "license#");
 		

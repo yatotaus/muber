@@ -1,6 +1,6 @@
 package clases;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @author yato
@@ -8,8 +8,8 @@ import java.sql.Date;
  */
 public class Passenger extends User {
 	
-	private Long user_id;
-	private Double passenger_credits;
+	private Long idUser;
+	private Double credits;
 
 	
 	public Passenger(){
@@ -23,42 +23,31 @@ public class Passenger extends User {
 	 * @param passenger_date
 	 * @param passenger_credits
 	 */
-	public Passenger(String passenger_name, String passenger_password, Date passenger_date, double passenger_credits){
-		super(passenger_name, passenger_password, passenger_date);
-		this.setPassenger_credits(passenger_credits);
-	}
-	
-	
-	/**
-	 * @return the credits
-	 */
-	public Double getPassenger_credits() {
-		return passenger_credits;
-	}
-
-	
-	/**
-	 * @param passenger_credits the passenger_credits to set
-	 */
-	public void setPassenger_credits(Double passenger_credits) {
-		this.passenger_credits = passenger_credits;
-	}	
-	
-	
-	/**
-	 * @return the user_id
-	 */
-	public Long getUser_id() {
-		return user_id;
+	public Passenger(String namePassenger, String passwd, Date datePasseger, double creditsValue){
+		super(namePassenger, passwd, datePasseger);
+		this.setCredits(creditsValue);
 	}
 
 
-	/**
-	 * @param user_id the user_id to set
-	 */
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
+	public Long getIdUser() {
+		return idUser;
 	}
+
+
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
+	}
+
+
+	public Double getCredits() {
+		return credits;
+	}
+
+
+	public void setCredits(Double credits) {
+		this.credits = credits;
+	}
+	
 	
 	
 	

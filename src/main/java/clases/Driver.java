@@ -1,6 +1,6 @@
 package clases;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -11,13 +11,12 @@ import java.util.HashSet;
 
 public class Driver extends User{
 	
-	private Long user_id;
-	private String driver_license;
-	private Collection<Trip> driver_trips; 
+	private String license;
+	private Collection<Trip> trips; 
 	
 	
 	public Driver(){
-		this.setDriver_trips(new HashSet<Trip>());
+		this.setTrips(new HashSet<Trip>());
 	}
 	
 	
@@ -29,65 +28,38 @@ public class Driver extends User{
 	 */
 	public Driver(String driver_name,  String driver_password, Date driver_date, String driver_license){
 		super(driver_name, driver_password, driver_date);
-		this.setDriver_license(driver_license);
+		this.setLicense(driver_license);
 	}
 
 	
-	/**
-	 * @return the user_id
-	 */
-	public Long getUser_id() {
-		return user_id;
-	}
-
 	
-	/**
-	 * @param user_id the user_id to set
-	 */
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
+	public String getLicense() {
+		return license;
 	}
 
 
-	/**
-	 * @return the driver_license
-	 */
-	public String getDriver_license() {
-		return driver_license;
-	}
-
-	
-	/**
-	 * @param driver_licence the driver_licence to set
-	 */
-	public void setDriver_license(String driver_license) {
-		this.driver_license = driver_license;
+	public void setLicense(String license) {
+		this.license = license;
 	}
 
 
-	/**
-	 * @return the driver_trips
-	 */
-	public Collection<Trip> getDriver_trips() {
-		return this.driver_trips;
+	public Collection<Trip> getTrips() {
+		return trips;
 	}
 
 
-	/**
-	 * @param driver_trips the driver_trips to set
-	 */
-	public void setDriver_trips(Collection<Trip> driver_trips) {
-		this.driver_trips = driver_trips;
+	public void setTrips(Collection<Trip> trips) {
+		this.trips = trips;
 	}
 
-	
+
 	/**
 	 * agrega al viaje trip el conductor
 	 * agrega a la colección driver_trips el viaje trip  
 	 */
 	public void addTrip(Trip trip){
-		trip.setTrip_driver(this);
-		this.getDriver_trips().add(trip);
+		trip.setDriver(this);
+		this.getTrips().add(trip);
 	}
 
 	
