@@ -1,6 +1,3 @@
-/**
- * 
- */
 package test;
 
 import java.io.File;
@@ -8,21 +5,19 @@ import java.sql.Date;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.junit.Test;
 import clases.*;
 
-/**
- * @author yato
- *
- */
-public class TestMuber {
+public class TestEtapa1 {
 
 	private static SessionFactory sessionFactory = buildSessionFactory();
 	
 	@SuppressWarnings("deprecation")
 	private static SessionFactory buildSessionFactory(){
 		try {
+			
+			System.out.println(new File("src/main/resources/hibernate/hibernate.cfg.xml").getAbsolutePath());
 			return new Configuration().configure(new File("src/main/resources/hibernate/hibernate.cfg.xml")).buildSessionFactory();
+			
 		}
 		catch(Throwable ex){
 			
@@ -31,10 +26,8 @@ public class TestMuber {
 		}
 	}
 	
-	
-	@Test
-	public final void test() {
-		
+
+	public static void main(String[] args) {
 		@SuppressWarnings("deprecation")
 		Date date = new Date(16, 04, 2017);
 		
@@ -76,6 +69,7 @@ public class TestMuber {
 		s.beginTransaction();
 		s.save(muber);
 		s.getTransaction().commit();
+
 	}
 
 }

@@ -1,10 +1,9 @@
 package clases;
-
 /**
  * @author marcos
  *
  */
-public class Score {
+public class Score implements PersistentMuberObject{
 
 	
 	private Long idScore;
@@ -15,7 +14,7 @@ public class Score {
 
 	
 	public Score() {
-		// TODO Auto-generated constructor stub
+ 
 	}
 	
 	
@@ -25,11 +24,19 @@ public class Score {
 	 */
 	public Score(String score_comment, Integer score_number) {
 		super();
-		this.setComment(score_comment);
+		this.setComment(comment);
 		this.setNumber(score_number);
 	}
 
-
+	public Score(String scoreComment, Integer points, Trip tripTrip, Passenger commentAutor) {
+		super();
+		this.setComment(scoreComment);
+		this.setNumber(points);
+		this.setTrip(tripTrip);
+		this.setAutor(commentAutor);
+	}
+	
+	
 	/**
 	 * @return the score_id
 	 */

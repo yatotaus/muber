@@ -1,15 +1,17 @@
 package clases;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+
 /**
- * @author yato
+ * @author marcos
  *
  */
-public class Trip {
+public class Trip implements PersistentMuberObject{
 
 	private Long idTrip;
 	private Float cost;
@@ -20,7 +22,7 @@ public class Trip {
 	private Collection<Passenger> passengers = new HashSet<Passenger>();
 	private Driver driver;
 	private Set<Score> scores= new HashSet<Score>();
-	private String state="enable";
+	private String state = "enable";
 	
 	/**
 	 * 
@@ -29,7 +31,16 @@ public class Trip {
 		this.setPassengers(new HashSet<Passenger>());
 	}
 	
-	
+	public ArrayList<Integer> getScore(){
+		ArrayList<Integer> scores = new ArrayList<Integer>();
+		Iterator iterator = scores.iterator();
+		while(iterator.hasNext()){
+			Score score = (Score) iterator.next();
+			scores.add(score.getNumber());
+		}
+		return scores;
+		
+	}
 	/**
 	 * @param trip_cost
 	 * @param trip_numberOfpassengers
@@ -47,7 +58,6 @@ public class Trip {
 		this.setDestiny(trip_to);
 	}
 
-	
 	
 	public Long getIdTrip() {
 		return idTrip;
@@ -146,6 +156,22 @@ public class Trip {
 		scores.add(score);
 		
 	}
+	
+	/**
+	 * @return the state
+	 */
+	public String getState() {
+		return state;
+	}
+
+
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(String state) {
+		this.state = state;
+	}
+
 
 	
 	/**
@@ -156,15 +182,20 @@ public class Trip {
 			this.passengers.add(passenger);
 	}
 	
-	
-	
-	public String getState() {
-		return state;
+	/**
+	 * Mensaje que devuelve si un viaje se puede modificar verificando que haya pasado su fecha de realización 
+	 * y que la cantidad de calificaciones recibidas sea menor que el número de pasajero registrados para el viaje
+	 */
+
+	public boolean canQualify(){
+		if(date == null){
+			return (scores.size() <passengers.size());
+		}
+		return (date.before(new Date())) && (scores.size() <passengers.size());
 	}
-
-
-	public void setState(String state) {
-		this.state = state;
+		
+	public void closeTrip(){
+		this.setState("disable");
 	}
 
 
@@ -175,6 +206,7 @@ public class Trip {
 	 *Podría ocurrir que un pasajero quede con créditos negativos. Desconocemos como se espera que el
 	 *sistema verifique esto. Asumimos que los créditos son enteros  
 	 * */
+	@SuppressWarnings("rawtypes")
 	public void discountCredit(){
 		int passengerNumber = passengers.size() + 1;
 		Passenger passenger;

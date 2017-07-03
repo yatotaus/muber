@@ -48,6 +48,11 @@
 					</configuration>  
 				</plugin>  
 			</plugins>  
-		</pluginManagement>  
+		</pluginManagement>
+		<resources>
+			<resource>
+      			<directory>src/main/*</directory>
+    		</resource>
+ </resources>  
 	</build>
 </project>
